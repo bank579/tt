@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .upload-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .file-input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+    img {
+  max-width: 100%;
+  height: auto;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #3E8E41;
+        margin: 0;
+        padding: 0;
+        background-color:black;
+                min-height: 70vh;
+                width: 70vw;
+                align-items: center;
+                background-size: cover;
+                background-position: center;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+      .purchase-button{
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                color: blueviolet;
+                background-color: yellowgreen;
+                align-content: center;
+                display: block;
+                margin: auto;
+                margin-top: 50px;
+                width: 450px;
+                height: 70px;
+            }
+            .button-a:hover{
+                background-color: blue;
+                color: aquamarine;
+            }
+      
+      .payment-info {
+        margin: 20px;
+      }
+      
+      .qr-code {
+        text-align: center;
+      }
+      
+      .wallet-address {
+        margin-top: 20px;
+      }
+      
+      .wallet-address p {
+        margin: 0;
+      }
+      
+      .wallet-address input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+      }
+      
+      .wallet-address button {
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 5px 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .wallet-address button:hover {
+        background-color: #8e3e3e;
+      }
+      .alert-a{
+        margin-left: 20px;
+        color: red;
+      }
+      .alert-b{
+        margin-left: 10px;
+        color: rgb(127, 225, 255);
+      }
+      .but2{
+        width: 400px;
+        padding-bottom: 10px;
+        padding-left: 70px;
+        padding-top: 10px;
+    
+      }
+  </style>
+</head>
+<body>
+  <h1>BITCOIN PAYMENT</h1>
+  <h2 class="alert-a">ALERT!!!</h2 >
+    <p class="alert-b">MAKE PAYMENT TO THE BITCOIN ADDRESS BELOW.THE PRICE OF THE CREDIT CARD IS IN THE DETAILS OF THE CARD.<br>
+    MAKE THE EXACT PAYMENT OF THE CC TO GET THE CREDIT CARD DETAILS.<br> THANK YOU!!!</p>
+    <div class="payment-info">
+      <p> E-mail to receive CC details:</p>
+			<input class="but2" type="text" id="amount" name="AMOUNT" placeholder="Enter the e-mail to receive the CC details. " required>
+    </div>
+    <div class="payment-info">
+      <div class="wallet-address">
+        <p>Wallet address:</p>
+        <input type="text" value="3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy" id="wallet-address">
+        <button onclick="copyToClipboard()">COPY YOUR DEPOSIT ADDRESS</button>
+      </div>
+      <h3>DEAR CUSTOMER,<br> TAKE NOTE THAT YOU WILL RECEIVE CREDIT CARD DETAILS IMMEDIATELY AFTER SCREENSHOT OF PAYMENT SENT.</h3>
+       <div class="upload-form">
+    <form action="#" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="form-label" for="screenshot">Upload Payment Screenshot:</label>
+        <input class="file-input" type="file" name="screenshot" id="screenshot" accept="image/*" required>
+      </div>
+      <button type="submit" class="submit-btn">Upload</button>
+    </form>
+  </div>
+      <button type="submit" class="purchase-button">CLICK HERE AFTER PAYMENT SCREENSHOT UPLOAD TO RECEIVE CREDIT DETAILS.</button>
+    </div>
+   <script>
+    function copyToClipboard() {
+        var walletAddress = document.getElementById("wallet-address");
+        walletAddress.select();
+        document.execCommand("copy");
+        alert("Copied the wallet address: " + walletAddress.value);
+      }
+      const purchaseButtons = document.querySelectorAll('.purchase-button');
+purchaseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Add code to handle purchase button click here
+    alert("Congratulations!!! We are verifying your payment screenshot. Make sure to upload it if you haven't done it. The Credit Card details would be sent to the e-mail you entered above after verification.")
+  });
+});
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  if (!username || !email || !password) {
+      alert('Please fill in all fields before submitting.');
+  } else {
+      // You can perform additional actions here, such as sending the form data to a server for authentication.
+      alert('Login successful!');
+  }
+});        
+      </script>
+</body>
+</html>

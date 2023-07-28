@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitcoin Investment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  
+    h2 {
+      text-align: center;
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 5px;
+    }
+  
+    .btn {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .investments {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .investment {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login" class="btn">
+      </div>
+    </form>
+  </div>
+  
+  <div class="investments" id="investments-container" style="display: none;">
+    <h2>Investment Offers</h2>
+    <div class="investment">
+      <h3>Investment Package 1</h3>
+      <p>Description of investment package 1.</p>
+      <p>Price: $100</p>
+      <button class="btn">Purchase</button>
+    </div>
+    <div class="investment">
+      <h3>Investment Package 2</h3>
+      <p>Description of investment package 2.</p>
+      <p>Price: $200</p>
+      <button class="btn">Purchase</button>
+    </div>
+    <div class="investment">
+      <h3>Investment Package 3</h3>
+      <p>Description of investment package 3.</p>
+      <p>Price: $300</p>
+      <button class="btn">Purchase</button>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      // Perform login validation here, e.g., using AJAX to send data to a server-side script
+      
+      // Simulating successful login
+      if (username === "admin" && password === "password") {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("investments-container").style.display = "block";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
