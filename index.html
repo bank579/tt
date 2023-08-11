@@ -12,7 +12,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #222020;
+            background-image: url('pay.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         
         .container {
@@ -65,23 +67,20 @@
     .snow{
         color: rgb(60, 255, 0);
     }
+    .okay{
+        color: rgb(98, 0, 255);
+        font-style: italic;
+    }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="snow">WELCOME TO BANK579 LOGS. ENTER YOUR DETAILS TO REGISTER.</h1>
+        <h1 class="snow">WELCOME TO BANK579 LOGS COMPANY</h1>
+        <h2 class="okay">WE OFFER YOU THE BEST BANK LOGS ON OUR SITE.</h2>
         <form id="login-form">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
             <div class="form-group">
                 <label for="email">Enter Email To Receive Log Details:</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password"> Create Password:</label>
-                <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" id="login-btn">SHOP NOW</button>
         </form>
@@ -90,11 +89,10 @@
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault();
         
-            const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+
         
-            if (!username || !email || !password) {
+            if ( !email ) {
                 alert('Please fill in all details before logging in.');
             } else {
                 // You can redirect the user to another page after successful login.
