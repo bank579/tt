@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BTC Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Set the viewport meta tag to ensure proper rendering on mobile devices */
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+/* Set a base font size for the document */
+html {
+  font-size: 16px;
+}
+/* Use media queries to adjust font sizes and other styles based on screen width */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+/* Set a maximum width for the content container to prevent it from becoming too wide on large screens */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Use responsive images to ensure they scale properly on different screen sizes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #3E8E41;
+        margin: 0;
+        padding: 0;
+        background-color:black;
+                min-height: 70vh;
+                width: 70vw;
+                align-items: center;
+                background-size: cover;
+                background-position: center;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+      .purchase-button{
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                color: blueviolet;
+                background-color: yellowgreen;
+                align-content: center;
+                display: block;
+                margin: auto;
+                margin-top: 50px;
+                width: 200px;
+                height: 60px;
+            }
+            .button-a:hover{
+                background-color: blue;
+                color: aquamarine;
+            }
+      
+      .payment-info {
+        margin: 20px;
+      }
+      
+      .qr-code {
+        text-align: center;
+      }
+      
+      .wallet-address {
+        margin-top: 20px;
+      }
+      
+      .wallet-address p {
+        margin: 0;
+      }
+      
+      .wallet-address input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+      }
+      
+      .wallet-address button {
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 5px 10px;
+        background-color: #1a058b;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .wallet-address button:hover {
+        background-color: #813e8e;
+        margin-left: 20px;
+      }
+      .alert-a{
+        margin-left: 50px;
+        color: red;
+      }
+      .alert-b{
+        margin-left: 50px;
+        color: rgb(127, 225, 255);
+      }
+      .page{
+        margin-left: 20px;
+      }
+
+      form {
+        width: 500px;
+        margin: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #000;
+        color: #fff;
+      }
+      h1 {
+        margin-left: 50px;
+        font-size: 36px;
+      }
+      form {
+        display: inline-block;
+        margin-top: 50px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #aaa;
+        max-width: 800px;
+      }
+      label {
+        display: block;
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      input[type="file"] {
+        display: block;
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      input[type="submit"] {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #da2108;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3ound-color: #3e8e41;
+      }
+      #output {
+        margin-top: 50px;
+        font-size: 24px;
+      }
+
+    </style> 
+  </head>
+  <body>
+    <h1>MAKE BITCOIN PAYMENT</h1>
+    <h2 class="alert-a">ALERT!!!</h2 >
+    <p class="alert-b">
+      MAKE THE EXACT PRICE PAYMENT OF THE LOG TO THE BITCOIN WALLET ADDRESS BELOW.<br> 
+      THE LOG DETAILS WOULD BE SENT TO YOUR EMAIL AND PAGE WOULD ALSO AUTOMATICALLY<br>
+      REFRESH TO GIVE YOU LOG DETAILS.
+    </p>
+      <div class="wallet-address">
+        <p class="page">Wallet address:</p>
+        <input type="text" value="bc1q3fvj23w253d5h0skn7cmlvd5q3tpk0ut0qhxmz" id="wallet-address">
+        <button onclick="copyToClipboard()">COPY YOUR DEPOSIT ADDRESS</button>
+      </div>
+      <h1>Upload Screenshot Payment</h1>
+	<form class="form" method="post" enctype="multipart/form-data">
+		<label for="photo">Select Payment Screenshot:</label>
+		<input type="file" id="photo" name="photo" required>
+		<br><br>
+		<input type="submit" value="Upload">
+	</form>
+	<div id="output"></div>
+      <button class="purchase-button" id="purchase-button">DONE TO RECEIVE LOG DETAILS</button>
+    </div>
+
+    <script>
+    function copyToClipboard() {
+        var walletAddress = document.getElementById("wallet-address");
+        walletAddress.select();
+        document.execCommand("copy");
+        alert("Copied the wallet address: " + walletAddress.value);
+      }
+      document.getElementById("purchase-button").addEventListener('click', function() {
+        alert('Invalid transaction.Make the exact payment of the bank log to our wallet address and upload screenshot to receive the log details.');
+    });
+    const form = document.querySelector('form');
+const output = document.querySelector('#output');
+form.addEventListener('submit', (event) => {
+	event.preventDefault();
+	const file = document.querySelector('#photo').files[0];
+	if (file) {
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => {
+			const img = document.createElement('img');
+			img.src = reader.result;
+			output.innerHTML = '';
+			output.appendChild(img);
+		};
+	}
+});
+      </script>
+  </body>
+</html>
+
